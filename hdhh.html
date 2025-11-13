@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رزرو میز | رستوران عمارت همای</title>
+<link rel="shortcut icon" href="./همای.jpg" type="image/x-icon">
+
+<!-- فونت فارسی -->
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+
+<!-- کتابخانه تقویم و تایم‌پیچر شمسی -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/persian-date@1.1.0/dist/persian-date.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+
+<style>
+/* ===== پس‌زمینه زنده ===== */
+body {
+  font-family:'Vazir', sans-serif;
+  background: url("./4.jpg") no-repeat center center / cover;
+  color: #fff8ef;
+  direction: rtl;
+  padding: 20px;
+  overflow-x: hidden;
+  backdrop-filter: blur(6px);
+  animation: bgMove 50s infinite linear alternate;
+}
+@keyframes bgMove {0% { background-position: center top; } 100% { background-position: center bottom; }}
+
+/* ===== Container فرم ===== */
+.container {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  max-width: 400px;
+  width: 100%;
+  padding: 35px 25px;
+  margin: 50px auto;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+  animation: fadeInUp 1s ease forwards;
+}
+@keyframes fadeInUp {0%{opacity:0;transform:translateY(30px);}100%{opacity:1;transform:translateY(0);}}
+
+/* ===== هدر ===== */
+.header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff8ef;
+  text-shadow: 0 3px 15px rgba(255,140,0,0.7);
+  animation: glowText 3s ease-in-out infinite alternate;
+}
+@keyframes glowText {
+  0% { text-shadow: 0 0 10px #ffb347, 0 0 20px #ff8c00; }
+  100% { text-shadow: 0 0 25px #ff6b00, 0 0 50px #ff4c00; }
+}
+.header h2 {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  animation: fadeIn 1.8s ease forwards;
+  animation-delay: 0.5s;
+}
+
+/* ===== نشان وضعیت سفارش ===== */
+.order-badge {
+  padding: 8px 22px;
+  border-radius: 30px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #065f46;
+  background: linear-gradient(145deg, #d1fae5, #a7f3d0);
+  box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(6px);
+  transition: all 0.4s ease;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease forwards;
+}
+.status-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #34d399, #059669);
+  box-shadow:0 0 8px #34d399,0 0 12px #10b981,inset 0 0 3px rgba(255,255,255,0.3);
+  animation: pulse 1.6s infinite ease-in-out, blinkColor 1.6s infinite alternate ease-in-out;
+}
+@keyframes pulse {0%,100%{transform:scale(1);opacity:1;}50%{transform:scale(1.3);opacity:0.8;}}
+@keyframes blinkColor {0%{box-shadow:0 0 6px #34d399,0 0 12px #10b981;}100%{box-shadow:0 0 14px #10b981,0 0 28px #059669;}}
+
+/* ===== فرم رزرو ===== */
+form {display:flex; flex-direction:column; gap:15px;}
+input, select {
+  padding:14px 15px;
+  border-radius:14px;
+  border:none;
+  font-size:1rem;
+  outline:none;
+  transition: all 0.3s ease;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+input::placeholder {color: #fff8ef; opacity:0.7;}
+input:focus, select:focus {box-shadow:0 0 12px #ffb347;}
+
+/* ===== دکمه ===== */
+button {
+  padding:14px;
+  border:none;
+  border-radius:15px;
+  background: linear-gradient(90deg,#ffb347,#ff8c00);
+  color:#111;
+  font-weight:700;
+  cursor:pointer;
+  font-size:1.1rem;
+  transition: all 0.3s ease;
+  position:relative;
+  overflow:hidden;
+}
+button::after {
+  content:'';
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(255,255,255,0.25);
+  transform: scaleX(0);
+  transform-origin:left;
+  transition: transform 0.4s ease;
+  border-radius:15px;
+}
+button:hover::after {transform: scaleX(1);}
+button:hover {transform:translateY(-2px) scale(1.03);}
+
+/* ===== پیام موفقیت ===== */
+.success-message {
+  display:none;
+  padding:12px;
+  border-radius:12px;
+  background:#34d399;
+  color:#111;
+  text-align:center;
+  font-weight:600;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* ===== تقویم و تایم‌پیچر شمسی ===== */
+.pwt-datepicker {
+  font-family: "Vazir", sans-serif !important;
+  background: #fffaf3 !important;
+  border-radius: 15px !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3) !important;
+  overflow: hidden !important;
+}
+.pwt-btn-today, .pwt-btn-submit {
+  background: #ff8c00 !important;
+  border-radius: 8px !important;
+  color:white !important;
+  transition:0.2s;
+}
+.pwt-btn-today:hover, .pwt-btn-submit:hover {background:#ff4c4c !important;}
+.pwt-date-view td span.selected {background-color:#ff8c00 !important;color:white !important;border-radius:8px;}
+.pwt-timepicker {background-color:#fff8ef !important;border-top:1px solid #ffd6a0;padding-top:10px;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <small id="orderBadge" class="order-badge"></small>
+    <h1>🍽️ رزرو میز | عمارت همای</h1>
+    <h2>تجربه‌ای فراموش‌نشدنی از غذای لذیذ</h2>
+  </div>
+
+  <form id="reserveForm">
+    <input type="text" id="name" placeholder="نام شما" required>
+    <input type="number" id="people" placeholder="تعداد نفرات" min="1" required>
+    <input type="text" id="date" placeholder="انتخاب تاریخ" required>
+    <input type="text" id="time" placeholder="انتخاب ساعت" required>
+    <button type="submit">ارسال رزرو به واتساپ</button>
+    <div class="success-message" id="successMessage">پیام رزرو آماده شد ✅ لطفاً واتساپ را بررسی کنید.</div>
+  </form>
+</div>
+
+<script>
+// شماره واتساپ مدیر
+const whatsappNumber = '989944546917';
+
+const form = document.getElementById('reserveForm');
+const successMessage = document.getElementById('successMessage');
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const people = document.getElementById('people').value.trim();
+  const date = document.getElementById('date').value;
+  const time = document.getElementById('time').value;
+
+  if(!name || !people || !date || !time){
+    alert('لطفاً همه فیلدها را پر کنید!');
+    return;
+  }
+
+  const text = `رزرو جدید رستوران عمارت همای\nنام: ${name}\nتعداد نفرات: ${people}\nتاریخ: ${date}\nساعت: ${time}`;
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+  successMessage.style.display = 'block';
+  window.open(url,'_blank');
+  form.reset();
+});
+function checkOrderTime() {
+  const badge = document.getElementById("orderBadge");
+  if (!badge) return;
+
+  // گرفتن زمان دقیق ایران به صورت رشته
+  const now = new Date();
+  const iranTimeString = now.toLocaleString("en-US", { timeZone: "Asia/Tehran" });
+
+  // تبدیل رشته به تاریخ برای استخراج ساعت و دقیقه
+  const iranTime = new Date(iranTimeString);
+  const iranHours = iranTime.getHours();   // 0 تا 23
+  const iranMinutes = iranTime.getMinutes(); 
+  const iranSeconds = iranTime.getSeconds();
+
+  // محاسبه ثانیه کل روز
+  const totalSeconds = iranHours * 3600 + iranMinutes * 60 + iranSeconds;
+  const startSeconds = 11 * 3600;                  // ساعت 11:00:00
+  const endSeconds = 23 * 3600 + 59 * 60 + 59;    // ساعت 23:59:59
+
+  if (totalSeconds >= startSeconds && totalSeconds <= endSeconds) {
+    // سفارش فعال
+    badge.innerHTML = `<span class="status-dot blink"></span> سفارش می‌پذیریم`;
+    badge.style.color = "#065f46";
+    badge.style.backgroundColor = "#d1fae5";
+    badge.style.border = "1px solid #6ee7b7";
+  } else {
+    // سفارش غیر فعال
+    badge.innerHTML = "❌ سفارش نمی‌پذیریم";
+    badge.style.color = "#b91c1c";
+    badge.style.backgroundColor = "#fee2e2";
+    badge.style.border = "1px solid #fca5a5";
+  }
+}
+
+// اجرای اولیه و سپس هر دقیقه یک بار
+checkOrderTime();
+setInterval(checkOrderTime, 60000);
+
+</script>
+
+</body>
+</html>

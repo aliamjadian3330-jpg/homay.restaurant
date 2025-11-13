@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>کافه رستوران عمارت همای | تجربه‌ای متفاوت</title>
+<link rel="shortcut icon" href="./همای.jpg" type="image/x-icon">
+<link rel="stylesheet" href="./style.css">
+<!-- فونت فارسی -->
+
+<link href="https://cdn.fontcdn.ir/Font/iranyekanx/iranyekanx.css" rel="stylesheet">
+
+
+<!-- آیکون‌ها -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- jQuery + Persian Datepicker -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
+<script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <img src="./همای.jpg" alt="">
+    <span style="color: rgb(64, 122, 230);">کافه رستوران همای</span>
+  </div>
+  <div>
+  <small id="orderBadge" class="order-badge"></small>
+</div>
+
+</header>
+
+<div class="hero-slider">
+  <div class="slide">
+    <div class="overlay"></div>
+    <div class="slide-content">
+      <h1>طعم اصیل غذای ایرانی 🇮🇷</h1>
+      <p>با بهترین مواد اولیه و محیطی دل‌نشین</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn">مشاهده منو</a>
+        <a href="#reserve" class="btn">رزرو میز</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="overlay"></div>
+    <div class="slide-content">
+      <h1>محیطی آرام و شیک 🌿</h1>
+      <p>برای قرارهای کاری و دورهمی‌های خانوادگی</p>
+      <div class="hero-actions">
+        <a href="#gallery" class="btn">مشاهده تصاویر</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="overlay"></div>
+    <div class="slide-content">
+      <h1>دسرهای خاص و بی‌نظیر 🍮</h1>
+      <p>شیرینی لحظات خود را با ما تجربه کنید</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn">تماس با ما</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== تب‌ها ===== -->
+<div class="menu-tabs">
+  <button class="tab active" data-target="menuSection">منوی همای</button>
+  <button class="tab" data-target="infoSection">اطلاعات رستوران</button>
+  <div class="tab-indicator"></div>
+  <a href="hdhh.html" target="_blank"><button class="tab">رزرو میز</button></a>
+</div>
+
+<div class="circle-container">
+  <div class="circle-wrapper"><a href="#section1" class="circle" data-target="section1"><img src="./burger.gif" alt="همبرگر"/></a><span class="circle-label">همبرگر</span></div>
+  <div class="circle-wrapper"><a href="#section2" class="circle" data-target="section2"><img src="./food-delivery.gif" alt="غذای اصلی"/></a><span class="circle-label">غذای اصلی ایرانی</span></div>
+  <div class="circle-wrapper"><a href="#section3" class="circle" data-target="section3"><img src="./biryani.gif" alt="برنج"/></a><span class="circle-label">برنج ایرانی</span></div>
+  <div class="circle-wrapper"><a href="#section4" class="circle" data-target="section4"><img src="./dinner.gif" alt="غذای ویژه"/></a><span class="circle-label">غذای ویژه همای</span></div>
+  <div class="circle-wrapper"><a href="#section5" class="circle" data-target="section5"><img src="./pizza.gif" alt="پیتزا"/></a><span class="circle-label">پیتزا ایتالیایی</span></div>
+  <div class="circle-wrapper"><a href="#section6" class="circle" data-target="section6"><img src="./salad.gif" alt="سالاد"/></a><span class="circle-label">سالاد های همای</span></div>
+  <div class="circle-wrapper"><a href="#section7" class="circle" data-target="section7"><img src="./migas.gif" alt="سوپ"/></a><span class="circle-label">سوپ</span></div>
+  <div class="circle-wrapper"><a href="#section8" class="circle" data-target="section8"><img src="./vegan-food.gif" alt="پیش غذا"/></a><span class="circle-label">پیش غذا</span></div>
+  <div class="circle-wrapper"><a href="#section9" class="circle" data-target="section9"><img src="./spaghetti.gif" alt="پاستا"/></a><span class="circle-label">پاستا</span></div>
+  <div class="circle-wrapper"><a href="#section10" class="circle" data-target="section10"><img src="./cocktail.gif" alt="نوشیدنی سرد"/></a><span class="circle-label">نوشیدنی سرد</span></div>
+  <div class="circle-wrapper"><a href="#section11" class="circle" data-target="section11"><img src="./coffee-shop.gif" alt="نوشیدنی گرم"/></a><span class="circle-label">نوشیدنی گرم</span></div>
+  <div class="circle-wrapper"><a href="#section12" class="circle" data-target="section12"><img src="./matcha-drink.gif" alt="شیک"/></a><span class="circle-label">شیک</span></div>
+  <div class="circle-wrapper"><a href="#section13" class="circle" data-target="section13"><img src="./cake.gif" alt="کیک"/></a><span class="circle-label">کیک</span></div>
+</div>
+  <!-- منو -->
+<section class="menu-section" id="section1">
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./برگر کلاسیک.jpg" alt="برگر همایونی">
+      <div class="menu-label">برگر همایونی<br>قیمت:390,000 تومان</div>
+      <div class="menu-overlay"><h3>برگر همایونی</h3><p>180گرم گوشت چرخ شده گاومیش پیچیده شده در پرده گوشت گوسفندی,گوجه,رلیش خیار,سس مخصوص ماستارد,سیب زمینی تنوری</p></div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./برگر کلاسیک.jpg" alt="برگر کلاسیک">
+      <div class="menu-label"><br>برگر کلاسیک<br>قیمت:375,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>برگر کلاسیک </h3>
+        <p> 180 گرم گوشت چرخ شده گاومیش ,کاهو,گوجه رلیش خیار ,سس مخصوص ماستارد سیب زمینی  تنوری</p>
+      </div>
+    </div>
+  </div>
+  
+<div class="menu-item">
+    <div class="menu-image">
+      <img src="./اوریال برگر.jpg" alt="اوریال برگر">
+      <div class="menu-label">اوریال برگر<br> قیمت:420,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>اوریال برگر</h3>
+        <p>180گرم گوشت چرخ شده گاومیش , بیکن ایرلندی ,دیپ پنیرگودا, کاهو,گوجه ,رلیش خیار ,سس مخصوص ماستارد,سیب زمینی تنوری</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./دنده برگر.jpg" alt="دنده برگر">
+      <div class="menu-label"> دنده برگر<br>قیمت:490,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>دنده برگر </h3>
+        <p>300گرم دنده گوساله,پیاز کاراملی ,کاهو,گوجه,رلیش خیار,سس چیلی</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./زینگر برگر.jpg" alt="زینگر برگر">
+      <div class="menu-label">زینگر برگر<br>قیمت:320,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>زینگر برگر</h3>
+        <p>فیله مرغ کریسپی سوخاری ,گوجه,کاهو,سس پنیر چدار,ژولین کلم,هویج, سیب زمینی تنوری ,سس هانی ماستارد</p>
+      </div>
+    </div>
+  </div>
+  </section>
+  <!-- ............................................................. -->
+   <section class="menu-section" id="section2">
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./ته چین مرغ.jpg" alt="ته چین مرغ ">
+      <div class="menu-label">ته چین مرغ و بادمجان<br>قیمت:580,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>ته چین مرغ و بامجان</h3>
+        <p>ته چین برنج زعفرانی ,250گرم سینه مرغ,آلو بخارا, زرشک,ماستو خیار,سس گوشت</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./ته چین مرغ.jpg" alt="ته چین گوشت">
+      <div class="menu-label">ته چین گوشت و بادمجان<br>قیمت:680,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>ته چین گوشت و بادمجان</h3>
+        <p>ته چین برنج زعفرانی ,300گرم گوشت راسته گوساله,بادمجان سرخ شده,آلو بخارا,زرشک,ماستوخیار,سس گوشت</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./جوجه بااستخون.jpg" alt="جوجه با استخون ">
+      <div class="menu-label">جوجه کباب بااستخوان <br>قیمت:390,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>جوجه کباب با استخوان</h3>
+        <p>یک سیخ جوجه کباب با استخوان900گرمی,سس انار <br>دورچین:[سبزی خورن,پیاز طعم دار,نارنج,گوجه کبابی ,کلم ترشی]</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./جوجه بی.jpg"alt="جوجه کباب بدون استخوان">
+      <div class="menu-label"> جوجه کباب بی استخوان<br>قیمت:260,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>جوجه کباب بی اسخوان</h3>
+        <p>300گرم سینه مرغ کبابی ,سس انار ویژه <br>دورچین[سبزی خوردن,پیازطعم دار ,نارنج,گوجه کبابی ,کلم ترشی
+      </div>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./خوراک های شاندیزی (گردن.ماهیجه).jpg"alt="خوراک گردن">
+      <div class="menu-label">خوراک های گردن وماهیچه شاندیزی <br>قیمت گردن:800,000 تومان<br>قیمت ماهیچه:900,000 تومان </div>
+      <div class="menu-overlay">
+        <h3>خوراک های گردن وماهیچه شاندیزی </h3>
+        <p>خوراک گردن:500گرم گردن با بخت شاندیزی [دور چین:سبزی خوردن,پیازطعم دار,نارنج,گوجه کبابی ,کلم ترشی]<br>
+          خوراک ماهیچه:500گرم ماهیچه با بخت شاندیزی [دور چین:سبزی خوردن,پیازطعم دار,نارنج,گوجه کبابی ,کلم ترشی]</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./رول بختیاری.jpg" alt="رول بختیاری ">
+      <div class="menu-label">کباب رول بختیاری <br>قیمت:550,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>کباب رول بختیاری </h3>
+        <p>300گرم راسته گوساله و دنبه ,سس مخصوص همای<br>
+        دورچین[سبزی خوردن,پیاز طعم دار,نارنج,گوجه کبابی,کلم ترشی]
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./مرغ اب.jpg" alt="مرغ اناری ">
+      <div class="menu-label">ران مرغ با سس انار و قیصی<br>قیمت:380,000 تومان </div>
+      <div class="menu-overlay">
+        <h3>ران مرغ با سس انار وقیصی </h3>
+        <p>450گرم ران مرغ  کانفیت شده,برنج سفید,میکس آلو وقیصی ,پرک بادام درختی</p>
+      </div>
+    </div>
+  </div>
+  
+<div class="menu-item">
+    <div class="menu-image">
+      <img src="./خوراک چنجه.jpg" alt="چنجه">
+      <div class="menu-label">کباب چنجه گوسفندی<br>قیمت:520,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>کباب چنجه گوسفندی </h3>
+        <p>250گرم گوشت گوسفندی چنجه ای ,دنبه, سس مخصوص همای <br>دورچین[سبزی خوردن,پیازطعم دار,نارنج,گوجه کبابی ,کلم ترشی]</p>
+      </div>
+    </div>
+  </div>
+  
+</section>
+  <!-- ........................................................................................... -->
+   <section class="menu-section" id="section4">
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./دست شونه.jpg" alt="دست شونه">
+      <div class="menu-label">دست شونه بره<br>قیمت:2,480,000 تومان</div>
+      <div class="menu-overlay">
+        <h3> دست شونه بره</h3>
+        <p>سر دست کامل بره,سس انبه ویژه,سس مخصوص همای,سالسا معطر</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./راسته همایونی (1).jpg" alt="راسته همایونی">
+      <div class="menu-label">راسته همایونی<br>قیمت:1,670,000 تومان</div>
+      <div class="menu-overlay">
+        <h3> راسته همایونی</h3>
+        <p>550گرم راسته گوسفتدی,حمص پسته,گراتین سیب زمینی,ساورکریم,سس انبه</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./استیک دنده گوساله.jpg" alt="تیکه تفتان">
+      <div class="menu-label">تیکه تفتان<br>قیمت:1,240,000 تومان</div>
+      <div class="menu-overlay">
+        <h3> تیکه تفتان</h3>
+        <p>250گرم ران گوسفندی ,بروکلی,حمصپسته,سیب زمینی سرخ کرده,ساورکریم,سس انبه</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./استیک دنده.jpg" alt="استیک دنده">
+      <div class="menu-label">استیک دنده گوساله<br>قیمت:900,000 تومان</div>
+      <div class="menu-overlay">
+        <h3> دنده گوساله</h3>
+        <p>600گرم دنده گوساله,پوره سیب زمینی دوپیازه ,روغن آروماتیک</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./خوراک زبان.jpg" alt="زبان گوساله">
+      <div class="menu-label">زبان گوساله<br>قیمت:900,0000تومان</div>
+      <div class="menu-overlay">
+        <h3>زبان گوساله</h3>
+        <p>200گرم زبان گوساله طعم دار شده ,گراتن سیب زمینی ,سس قارچ کلاسیک,سالسا معطر</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./استیک مرغ.jpg" alt="استیک مرغ">
+      <div class="menu-label">استیک مرغ گریل شده<br>قیمت:390,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>استیک مرغ گریل شده</h3>
+        <p>250 گرم سینه مرغ گریل شده,پوره سیب زمینی ,آناناسگریل شده,بروکلی مزه دارشده,سس قارچ</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ............................................................................................................. -->
+ <section class="menu-section" id="section5">
+    <div class="menu-item">
+    <div class="menu-image">
+      <img src="./سیرو استیک.jpg" alt="سیرو استیک">
+      <div class="menu-label">پیتزا سیرو استیک <br>قیمت:480,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>پیتزا سیرو استیک</h3>
+        <p>خمیر پیتزا ناپولیتن,سس سرشیر بوفالو,برشهای طعم دار شده گوساله,پنیر موزارلا,سیر کانفی شده,روغن سیر</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./پستو بوقلمون.jpg" alt="پستو">
+      <div class="menu-label">پیتزا پستو بوقلمون<br>قیمت:440,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>پیتزا پستو بوقلمون</h3>
+        <p>خمیر پیتزا ناپولتین, سس پستو ریحون,ورقه های فراوری شده بوقلمون,روکولا,پنیر موزارلا</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./بیکن.jpg" alt="بیکن اناناس">
+      <div class="menu-label">پیتزا بیکن آناناس <br>قیمت:460,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>پیتزا بیکن آناناس </h3>
+        <p>آناناس,خمیر پیتزا ناپولتین,سس سرشیر بوفالو,بیکن ایرلندی ,چیپس قارچ ,پنیر موزارلا,روکولا</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./پپرونی.jpg" alt="پپرونی">
+      <div class="menu-label">پیتزا پپرونی<br>قیمت:360,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>پیتزا پپرونی</h3>
+        <p>خمیر پیتزا ناپولتین,سس گوجه فرنگی,ژامبون پپرونی,هالوپینو,پنیر موزارلا</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./سرشیر زبان.jpg" alt="زبان">
+      <div class="menu-label">پیتزا سر شیر زبان<br>قیمت:520,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>پیتزا سر شیر زبان</h3>
+        <p>خمیر پیتزا ناپولتین,سس سر شیر بوفالو ,زبان گوساله, چیپس قارچ, پیاز طعم دارشده,پنیر موزرالا</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./مارگاریتا.jpg" alt="پیتزا مارگاریتا">
+      <div class="menu-label">پیتزا مارگاریتا<br>قیمت:320,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>پیتزا مارگاریتا</h3>
+        <p>خمیر پیتزا ناپولتین, سس گوجه فرنگی,پنیر موزارلا</p>
+      </div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./شکاری.jpg" alt="پیتزا شکاری ">
+      <div class="menu-label">پیتزا شکاری<br>قیمت:390,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>پیتزا شکاری </h3>
+        <p>خمیر ناپولتین,سوسیس شکاری,پیاز کاراملی شده,گوجه کانفی,سس اسموک چیلی,پنیر موزارلا </p>
+      </div>
+    </div>
+  </div>
+<div class="menu-item">
+    <div class="menu-image">
+      <img src="./دوپیاز میگو.jpg" alt="پیتزا تو پیاز میگو">
+      <div class="menu-label">پیتزا دو پیاز میگو<br>قیمت:390,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>پیتزا دو پیاز و میگو</h3>
+        <p>خمیر پیتزا ناپولیتن,سس گوجه,ادویه اسپایسی ,پیاز عسلی,پنیر موزارلا</p>
+      </div>
+    </div>
+  </div>
+<div class="menu-item">
+    <div class="menu-image">
+      <img src="./پستو بوقلمون.jpg" alt="پیتزا چیکن برست">
+      <div class="menu-label">پیتزا چیکن برست<br>قیمت:440,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>پیتزا چیکن برست</h3>
+        <p>خمیر پیتزا ناپولتین,تیکه های سینه مرغ مزه دارشده,زیتون,سیب درختی ,ادویه مخصوص ,کینوا,پیازچه,پنیر موزارلا</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ................................................................................................... -->
+ <section class="menu-section" id="section8">
+<div class="menu-item">
+    <div class="menu-image">
+      <img src="./بوفالو وینگ.jpg" alt="بوفالو وینگز">
+      <div class="menu-label">بوفالو وینگز<br>قیمت:260,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>بوفالو وینگز</h3>
+        <p>بال مرغ سوخاری شدهباسستند بوفالو وسیب زمینی تکه ای</p>
+      </div>
+    </div>
+  </div>
+<div class="menu-item">
+    <div class="menu-image">
+      <img src="./داینامیک میگو.jpg" alt="داینامیک میگو">
+      <div class="menu-label">داینامیک میگو<br>قیمت:370,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>داینامیک میگو</h3>
+        <p>میگوی تمپورا شده درسس داینامیک به همراه سبزیجات</p>
+      </div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./اسپرینگ رول.jpg" alt="اسپرینگ رول">
+      <div class="menu-label">اسپرینگ رول<br>قیمت:240,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>اسپرینگ رول</h3>
+        <p>رول پیچیده شده با مرغ وسبزیجات به همراه سس رنچ و گلیزانار</p>
+      </div>
+    </div>
+  </div>
+<div class="menu-item">
+    <div class="menu-image">
+      <img src="./چیکن بونلس.jpg" alt="چیکن بونلس">
+      <div class="menu-label">چیکن بونلس<br>قیمت:230,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>چیکن بونلس</h3>
+        <p>تکه های مرغ سوخاری به همراه سبزیجات مزه دار شده</p>
+      </div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./سیب ویج.jpg" alt="سیب وج">
+      <div class="menu-label">سیب وج <br>قیمت:130,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>سیب وج</h3>
+        <p>سیب ویج با ادویه ترکیبی ومعطر وسس پنیر</p>
+      </div>
+    </div>
+  </div>
+<div class="menu-item">
+    <div class="menu-image">
+      <img src="./ماست.jpg" alt="سینی ماست">
+      <div class="menu-label">سینی ماست<br>قیمت:110,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>سینی ماست</h3>
+        <p>با طعم های ترکیبی</p>
+      </div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./بشقاب زیتون.jpg" alt="زیتون">
+      <div class="menu-label">بشقاب زیتون<br>قیمت:140,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>بشقاب زیتون</h3>
+        <p></p>
+      </div>
+    </div>
+  </div>
+  </section>
+<!-- ........................................................................................ -->
+ <section class="menu-section" id="section6">
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./سالاد کینوا.jpg" alt="سالاد">
+      <div class="menu-label">سالاد کینوا همای<br>قیمت:390,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>سالاد کینوا همای</h3>
+        <p>میکس کاهو واسفناج ,کینواپخته شده,بادام سیب زمینی,گوجه گیلاسی,سیب,سیب,توت فرنگی,بروکلی,پرتقال,سسهانی ماستاردوسس بری,سینه مرغ گریل شده</p>
+      </div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./سالاد پارادایس.jpg" alt="سالاد">
+      <div class="menu-label">سالاد پارادایس همای<br>قیمت:280,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>سالاد پارادایس همای </h3>
+        <p>میکس کاهو واسفناج,بروکلی,گوجه گیلاسی ,پنیر توپیطعم دارشده,تخمه افتابگردان کنجد برشته شده, سس گرین گاردن</p>
+      </div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./سالاد چیکن رول.jpg" alt="سالاد">
+      <div class="menu-label">سالاد چیکن رول<br>قیمت:375,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>سالاد  چیکن رول</h3>
+        <p> میکس کاهو و اسفناج ,بروکلی,گوجه گیلاسی , پنیر توپی طعم دارشده,تخمه آفتابگردان کنجد برشته شده ,سس گرین گاردن</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="menu-section" id="section3">
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./شوید پلو.jpg" alt="شوید">
+      <div class="menu-label">شوید پلو گیلانی <br>قیمت:110,000 تومان</div>
+      <div class="menu-overlay">
+        <h3>شوید پلو گیلانی </h3>
+        <p>با عطر طعم و رایحه  خاص </p>
+      </div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="menu-image">
+      <img src="./برنج سفید ایرانی.jpg" alt="برنج سفید">
+      <div class="menu-label">برنج سفید  گیلانی <br>قیمت:110,000 تومان</div>
+      <div class="menu-overlay">
+        <h3> برنج سفید  گیلانی </h3>
+        <p>با عطر طعم و رایحه  خاص </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ویژگی‌ها -->
+<section class="features">
+  <div class="feature"><i class="fa-solid fa-mug-hot"></i><h4>قهوه‌های خاص</h4><p>منتخبی از بهترین دانه‌های قهوه دنیا</p></div>
+  <div class="feature"><i class="fa-solid fa-utensils"></i><h4>غذاهای اصیل</h4><p>طعم بی‌نظیر غذاهای ایرانی و فرنگی</p></div>
+  <div class="feature"><i class="fa-solid fa-music"></i><h4>موزیک زنده</h4><p>لذت گوش‌نواز همراه با وعده‌ای دلپذیر</p></div>
+  <div class="feature"><i class="fa-solid fa-wifi"></i><h4>اینترنت رایگان</h4><p>اتصال سریع و بدون محدودیت</p></div>
+</section>
+
+<hr class="hr">
+
+
+<!-- درباره -->
+<section class="menu-section" id="infoSection">
+  <div class="menu-item">
+    <img src="./مکان.jpg" alt="آدرس">
+    <div class="name">آدرس</div>
+    <div class="price">دزفول، خیابان شریعتی غربی نبش خیابان مسلم</div>
+  </div>
+  <div class="menu-item">
+    <img src="./زمان.jpg" alt="ساعت کاری">
+    <div class="name">ساعت کاری</div>
+    <div class="price">هر روز از 11 صبح تا 24 شب</div>
+  </div>
+</section>
+
+<!-- بخش درباره رستوران -->
+<section class="info-section">
+  <h2>درباره عمارت همای</h2>
+  <p>رستوران عمارت همای با فضایی دلنشین و محیطی سنتی-لوکس، آماده است تا تجربه‌ای متفاوت از غذاهای خوشمزه و باکیفیت را برای شما رقم بزند.</p>
+  <p>ما به ترکیبی از طعم‌های اصیل ایرانی و سرویس‌دهی مدرن اعتقاد داریم و تلاش می‌کنیم هر وعده غذایی، خاطره‌ای خوش برای شما بسازد.</p>
+  <p>با استفاده از مواد تازه و طبیعی، منویی متنوع و جذاب برای همه سلیقه‌ها فراهم کرده‌ایم. چه برای یک دورهمی خانوادگی، چه برای یک قرار دوستانه یا مراسم‌های ویژه، عمارت همای مکانی ایده‌آل برای لحظاتی به یادماندنی است.</p>
+  <p>منتظر حضور شما هستیم تا همراه با سرویس‌دهی گرم و غذاهای خوش‌طعم، تجربه‌ای به‌یادماندنی در عمارت همای داشته باشید.</p>
+  <a href="./hdhh.html" target="_blank" class="btn-reserve">رزرو میز</a>
+</section>
+
+<!-- گالری تصاویر -->
+ <h1 style="color: #b34700;text-align: center;">گالری ها</h1>
+<section class="gallery">
+  <img src="./2.jpg" alt="رستوران">
+  <img src="./4.jpg" alt="غذا">
+  <img src="./فضا.jpg" alt="محیط">
+  <img src="./10 (1).jpg" alt="سفره">
+  <img src="./10 (2).jpg" alt="سفره">
+  
+</section>
+
+<footer id="footer">
+  <div class="footer-glow"></div>
+  <div class="nmad">
+      <img src="./nmad aeftekar.png"/>
+    </div>
+    <br>
+  <div class="container">
+    <div class="col">
+      <h3>درباره عمارت همای</h3>
+      <p class="about">
+        رستوران عمارت همای با فضایی آرام، دکوراسیون فاخر و غذاهای اصیل ایرانی، تجربه‌ای متفاوت از طعم و حس را برای شما رقم می‌زند.
+      </p>
+    </div>
+
+    <div class="col">
+      <h3>دسترسی سریع</h3>
+      <ul>
+        <li><a href="#infoSection">اطلاعات تماس</a></li>
+        <li><a href="#menu">منو</a></li>
+        <li><a href="#gallery">گالری</a></li>
+        <li><a href="#reserve">رزرو میز</a></li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h3>ارتباط با ما</h3>
+      <ul>
+        <li>📍 دزفول، خیابان شریعتی غربی، نبش خیابان مسلم</li>
+        <li>📞 061-34340</li>
+        <li>✉️ info@emarat-homay.ir</li>
+      </ul>
+      
+      <div class="social">
+        <a href="https://www.instagram.com/homay.restaurant/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <p>© ۱۴۰۴ کافه رستوران عمارت همای - تمامی حقوق محفوظ است.</p>
+</footer>
+<!-- آیکون‌ها -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // عناصر DOM
+  const menuSection = document.getElementById('menuSection');
+  const infoSection = document.getElementById('infoSection');
+  const modal = document.getElementById('reservationModal');
+  const successMsg = document.getElementById('reservationSuccess');
+  const header = document.querySelector('header');
+  const tabsContainer = document.querySelector('.menu-tabs');
+  const tabs = document.querySelectorAll('.menu-tabs .tab');
+  const indicator = document.querySelector('.menu-tabs .tab-indicator');
+
+  // ==== توابع عمومی ====
+  const showSection = (section) => {
+    [menuSection, infoSection].forEach(sec => sec.style.display = 'none');
+    section.style.display = 'flex';
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const openModal = () => modal?.classList.add('active');
+  const closeModal = () => modal?.classList.remove('active');
+
+  const showSuccess = () => {
+    successMsg.style.display = 'block';
+    setTimeout(() => {
+      successMsg.style.display = 'none';
+      closeModal();
+      document.getElementById('reservationForm')?.reset();
+    }, 2500);
+  };
+
+  const moveIndicator = (tab) => {
+    if(indicator && tab){
+      indicator.style.width = tab.offsetWidth + 'px';
+      indicator.style.left = tab.offsetLeft + 'px';
+    }
+  };
+
+  // ==== نمایش بخش‌ها با کلیک روی تب ====
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // حذف کلاس active از همه تب‌ها
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      moveIndicator(tab);
+
+      // نمایش بخش مرتبط
+      const targetId = tab.dataset.target;
+      if(targetId){
+        const targetSection = document.getElementById(targetId);
+        if(targetSection) showSection(targetSection);
+
+        // تغییر کلاس container برای افکت‌های CSS (اختیاری)
+        tabsContainer.classList.toggle('active-info', targetId === 'infoSection');
+      }
+    });
+  });
+
+  // ==== نمایش اولیه ====
+  const activeTab = document.querySelector('.menu-tabs .tab.active');
+  if(activeTab){
+    moveIndicator(activeTab);
+    const initialTarget = activeTab.dataset.target;
+    if(initialTarget){
+      const initialSection = document.getElementById(initialTarget);
+      if(initialSection) showSection(initialSection);
+    }
+  }
+
+  // ==== بروزرسانی زیرخط هنگام تغییر اندازه صفحه ====
+  window.addEventListener('resize', () => {
+    const activeTab = document.querySelector('.menu-tabs .tab.active');
+    if(activeTab) moveIndicator(activeTab);
+  });
+
+  // ==== مدیریت مودال ====
+  document.querySelectorAll('#reservationBtn, #reservationBtn2').forEach(btn => {
+    btn.addEventListener('click', openModal);
+  });
+  document.getElementById('closeReservationModal')?.addEventListener('click', closeModal);
+
+  // ==== ارسال فرم ====
+  $('#reservationForm').on('submit', function(e){
+    e.preventDefault();
+    showSuccess();
+  });
+
+  // ==== تغییر کلاس هدر هنگام اسکرول ====
+  window.addEventListener('scroll', () => {
+    header?.classList.toggle('scrolled', window.scrollY > 30);
+  });
+});
+
+
+
+
+
+// ------------نمایش اطلاعات بالای فوتر-----------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelectorAll('.menu-tabs .tab[data-target]');
+  const sections = document.querySelectorAll('.menu-section');
+  const indicator = document.querySelector('.tab-indicator');
+  const tabsContainer = document.querySelector('.menu-tabs');
+
+  const moveIndicator = (tab) => {
+    indicator.style.width = tab.offsetWidth + 'px';
+    indicator.style.left = tab.offsetLeft + 'px';
+  };
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // فعال کردن تب
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // نمایش بخش مرتبط
+      const targetId = tab.getAttribute('data-target');
+      sections.forEach(sec => sec.classList.remove('active'));
+      const target = document.getElementById(targetId);
+      if(target) target.classList.add('active');
+
+      // تغییر رنگ نوار متحرک
+      if(targetId === 'infoSection') tabsContainer.classList.add('active-info');
+      else tabsContainer.classList.remove('active-info');
+
+      moveIndicator(tab);
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  // تنظیم اولیه
+  const activeTab = document.querySelector('.menu-tabs .tab.active');
+  if(activeTab) moveIndicator(activeTab);
+
+  window.addEventListener('resize', () => {
+    const activeTab = document.querySelector('.menu-tabs .tab.active');
+    if(activeTab) moveIndicator(activeTab);
+  });
+});
+
+
+// نمایش فوتر---------
+
+document.addEventListener('scroll', () => {
+    const footer = document.getElementById('footer');
+    const rect = footer.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 150) {
+      footer.classList.add('show');
+    }
+  });
+
+
+
+// -----------------     تایین زمان سفارش گیری          -------------------
+  function checkOrderTime() {
+  const badge = document.getElementById("orderBadge");
+  if (!badge) return;
+
+  // گرفتن زمان دقیق ایران به صورت رشته
+  const now = new Date();
+  const iranTimeString = now.toLocaleString("en-US", { timeZone: "Asia/Tehran" });
+
+  // تبدیل رشته به تاریخ برای استخراج ساعت و دقیقه
+  const iranTime = new Date(iranTimeString);
+  const iranHours = iranTime.getHours();   // 0 تا 23
+  const iranMinutes = iranTime.getMinutes(); 
+  const iranSeconds = iranTime.getSeconds();
+
+  // محاسبه ثانیه کل روز
+  const totalSeconds = iranHours * 3600 + iranMinutes * 60 + iranSeconds;
+  const startSeconds = 11 * 3600;                  // ساعت 11:00:00
+  const endSeconds = 23 * 3600 + 59 * 60 + 59;    // ساعت 23:59:59
+
+  if (totalSeconds >= startSeconds && totalSeconds <= endSeconds) {
+    // سفارش فعال
+    badge.innerHTML = `<span class="status-dot blink"></span> سفارش می‌پذیریم`;
+    badge.style.color = "#065f46";
+    badge.style.backgroundColor = "#d1fae5";
+    badge.style.border = "1px solid #6ee7b7";
+  } else {
+    // سفارش غیر فعال
+    badge.innerHTML = "❌ سفارش نمی‌پذیریم";
+    badge.style.color = "#b91c1c";
+    badge.style.backgroundColor = "#fee2e2";
+    badge.style.border = "1px solid #fca5a5";
+  }
+}
+
+// اجرای اولیه و سپس هر دقیقه یک بار
+checkOrderTime();
+setInterval(checkOrderTime, 60000);
+
+
+// نمایش بخش مربوطه هنگام کلیک روی دایره‌ها
+const buttons = document.querySelectorAll('.circle');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = btn.getAttribute('data-target');
+    document.querySelectorAll('.menu-section').forEach(sec => sec.classList.remove('active'));
+    const targetSection = document.getElementById(targetId);
+    if(targetSection) targetSection.classList.add('active');
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
+
