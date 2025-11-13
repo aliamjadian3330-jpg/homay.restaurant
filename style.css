@@ -1,4 +1,4 @@
-﻿  :root {
+  :root {
   --accent: #e63946;
   --dark: #181818;
   --muted: #6b7279;
@@ -482,24 +482,18 @@ nav a.active::after {
       margin: 0;
       font-family: "Vazirmatn", sans-serif;
       background: var(--bg);
-    }.menu-section {
+    }
+/* بخش منو */
+.menu-section {
   display: flex;
   flex-wrap: wrap;           /* اجازه می‌دهد کارت‌ها به خط بعدی بروند */
   justify-content: center;   /* وسط چین کردن */
   gap: 20px;                 /* فاصله بین کارت‌ها */
   padding: 40px 20px;
-}
-
-.menu-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  padding: 50px 20px;
   background: #f9f9f9;
 }
 
-/* کارت‌ها */
+/* حالت مخفی برای نمایش بر اساس کلاس فعال */
 .menu-section {
   display: none;
   margin: 30px 0;
@@ -507,13 +501,12 @@ nav a.active::after {
 
 .menu-section.active {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
 }
 
+/* کارت‌ها */
 .menu-item {
   position: relative;
-  flex: 1 1 calc(33.333% - 20px);
+  flex: 1 1 calc(33.333% - 20px); /* نمایش 3 کارت در دسکتاپ */
   max-width: 340px;
   border-radius: 18px;
   overflow: hidden;
@@ -526,6 +519,7 @@ nav a.active::after {
   box-shadow: 0 12px 35px rgba(0,0,0,0.25);
 }
 
+/* تصویر کارت */
 .menu-image {
   position: relative;
   width: 100%;
@@ -545,6 +539,7 @@ nav a.active::after {
   transform: scale(1.08);
 }
 
+/* برچسب کارت */
 .menu-label {
   position: absolute;
   bottom: 0;
@@ -565,6 +560,7 @@ nav a.active::after {
   transform: translateY(20px);
 }
 
+/* اورلی کارت */
 .menu-overlay {
   position: absolute;
   inset: 0;
@@ -589,8 +585,31 @@ nav a.active::after {
 .menu-overlay p { font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
 .menu-overlay .price { font-size: 17px; font-weight: 700; color: #ffdf00; }
 
-@media (max-width: 1024px) { .menu-item { flex: 1 1 calc(50% - 20px); } }
-@media (max-width: 768px) { .menu-item { flex: 1 1 100%; } }
+/* رسپانسیو */
+@media (max-width: 1200px) {
+  .menu-item { flex: 1 1 calc(33% - 20px); }
+}
+
+@media (max-width: 1024px) {
+  .menu-item { flex: 1 1 calc(50% - 20px); }
+}
+
+@media (max-width: 768px) {
+  .menu-item { flex: 1 1 100%; }
+  .menu-section { padding: 30px 15px; }
+  .menu-label { font-size: 14px; padding: 8px 0; }
+  .menu-overlay h3 { font-size: 18px; }
+  .menu-overlay p { font-size: 13px; }
+  .menu-overlay .price { font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+  .menu-section { padding: 20px 10px; }
+  .menu-label { font-size: 13px; padding: 6px 0; }
+  .menu-overlay h3 { font-size: 16px; }
+  .menu-overlay p { font-size: 12px; }
+  .menu-overlay .price { font-size: 15px; }
+}
 
 
 /* ==== فوتر عمارت همای ==== */
@@ -1016,7 +1035,6 @@ hr.short {
     width: calc(50% - 6px);
   }
 }
-
 /* ===== بخش درباره رستوران ===== */
 .info-section {
   max-width: 850px;
@@ -1034,6 +1052,7 @@ hr.short {
   animation: fadeSlideIn 1s forwards;
   animation-delay: 0.6s;
 }
+
 .info-section::before {
   content: '';
   position: absolute;
@@ -1045,6 +1064,7 @@ hr.short {
   transform: translateX(-50%);
   border-radius: 2px;
 }
+
 .info-section h2 {
   text-align: center;
   font-size: 32px;
@@ -1061,6 +1081,7 @@ hr.short {
   margin: 0 10px;
   font-size: 28px;
 }
+
 .info-section p {
   font-size: 16px;
   margin-bottom: 18px;
@@ -1068,13 +1089,15 @@ hr.short {
   transform: translateY(20px);
   animation: fadeSlideIn 1s forwards;
 }
-.info-section p:nth-child(2) { animation-delay: 1s; }
-.info-section p:nth-child(3) { animation-delay: 1.2s; }
-.info-section p:nth-child(4) { animation-delay: 1.4s; }
-.info-section p:nth-child(5) { animation-delay: 1.6s; }
+.info-section p:nth-of-type(1) { animation-delay: 1s; }
+.info-section p:nth-of-type(2) { animation-delay: 1.2s; }
+.info-section p:nth-of-type(3) { animation-delay: 1.4s; }
+.info-section p:nth-of-type(4) { animation-delay: 1.6s; }
+
 @keyframes fadeSlideIn {
   to { opacity: 1; transform: translateY(0); }
 }
+
 .info-section:hover {
   transform: translateY(-5px);
   box-shadow: 0 35px 60px rgba(0,0,0,0.18);
@@ -1105,10 +1128,9 @@ hr.short {
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  margin: 50px 0;
 }
 .gallery img {
-  width: 200px;
+  flex: 1 1 calc(200px - 10px);
   height: 140px;
   object-fit: cover;
   border-radius: 15px;
@@ -1122,17 +1144,11 @@ hr.short {
 
 /* ===== ریسپانسیو ===== */
 @media (max-width: 768px) {
-  #infoSection { flex-direction: column; align-items: center; padding: 40px 10px; }
-  .menu-item { width: 90%; }
-  .menu-item img { width: 70px; height: 70px; }
-  .menu-item .name { font-size: 16px; }
-  .menu-item .price { font-size: 13px; }
-  .info-section { padding: 30px 20px; border-radius: 20px; }
+  .info-section { flex-direction: column; align-items: center; padding: 30px 20px; }
   .info-section h2 { font-size: 26px; }
   .info-section p { font-size: 14px; }
-  .gallery img { width: 45%; height: 120px; }
+  .gallery img { flex: 1 1 calc(45% - 10px); height: 120px; }
 }
-
 /* نمایش چشمک زن سفارش گیری */
 
 /* 🎯 استایل کلی نشان سفارش */
